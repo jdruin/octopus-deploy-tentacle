@@ -50,13 +50,13 @@ action :install do
 end
 
 action :configure do
-
+  # Need to increment port for instances
   Chef::Application.fatal!(':server_thumbprint cannot be nil for action :configure') if new_resource.server_thumbprint.nil?
   Chef::Application.fatal!(':api_key cannot be nil for action :configure') if new_resource.api_key.nil?
   if new_resource.polling && new_resource.server.nil?
     Chef::Application.fatal!(':server cannot be nil for action :configure if :polling is true')
   end
-
+  Chef::Application.fatal!(':version cannot be nil for action :configure')
   od_tentacle new_resource.instance do
     version new_resource.version
   end
