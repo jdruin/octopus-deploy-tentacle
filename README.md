@@ -25,3 +25,37 @@ This cookbook is still very beta and was built to get around the scripting Octop
 :proxy_username, [String, nil], default: nil
 :use_default_proxy, [true, false], default: false
 
+```ruby
+# Installs the tentacle only
+od_tentacle 'Tentacle' do
+  version #<version>
+end
+
+# Installs and configures the node locally
+od_tentacle 'Tentacle' do
+  action :configure
+  version #<version>
+  server_thumbprint <server thumbprint>
+  api_key #<server api key>
+  polling false
+  server #<server url>
+end
+
+# Registers with the Octopus Deploy server
+
+od_tentacle 'Tentacle' do
+  action :register
+  server #<server url>
+  api_key #<server api key>
+end
+
+# Unistalls the tentacle
+od_tentacle 'Tentacle' do
+  action :uninstall
+end
+
+# Removes the instance information for a tentacle
+od_tentacle 'Tentacle' do
+  action :remove
+end
+```
