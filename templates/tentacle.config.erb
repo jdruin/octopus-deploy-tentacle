@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<octopus-settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <set key="Octopus.Home"><%= @od_home %></set>
+  <% if !@nolisten %>
+    <% if @proxy_host.nil?%>
+      <set key="Octopus.Server.Proxy.ProxyHost" />
+    <%else%>
+      <set key="Octopus.Server.Proxy.ProxyHost"><%= @proxy_host%></set>
+    <% end%>
+    <% if @proxy_password.nil?%>
+      <set key="Octopus.Server.Proxy.ProxyPassword" />
+    <%else%>
+      <set key="Octopus.Server.Proxy.ProxyPassword"><%= @proxy_password%></set>
+    <% end%>
+    <set key="Octopus.Server.Proxy.ProxyPort"><%= @proxy_port%></set>
+    <% if @proxy_username.nil?%>
+      <set key="Octopus.Server.Proxy.ProxyUsername" />
+    <%else%>
+      <set key="Octopus.Server.Proxy.ProxyUsername"><%= @proxy_username%></set>
+    <% end%>
+    <set key="Octopus.Server.Proxy.UseDefaultProxy"><%= @use_default_proxy%></set>
+  <%end%>
+  <set key="Tentacle.Certificate"><%= @cert %></set>
+  <set key="Tentacle.CertificateThumbprint"><%= @cert_thumbprint %></set>
+  <set key="Tentacle.Communication.TrustedOctopusServers"><%= @trusted_server %></set>
+  <set key="Tentacle.Deployment.ApplicationDirectory"><%= @application_dir %></set>
+  <set key="Tentacle.Services.NoListen"><%= @nolisten %></set>
+  <set key="Tentacle.Services.PortNumber"><%= @port %></set>
+</octopus-settings>
