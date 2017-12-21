@@ -3,7 +3,7 @@
 This cookbook is heavily influenced by https://github.com/cvent/octopus-deploy-cookbook.  Special thanks to Brent Montague (@BrentM5) for the cookbook.
 
 This cookbook is still very beta and was built to get around the scripting Octopus Deploy wants you to use to install the tentacle on a client.  I have had a lot of issues with it in the past and decided to go down a long road to this cookbook.
-
+```
 :instance, String, name_property, Used as the name for the instance
 :version, String, Required for :install and :configure
 :source, String, Defaults to Octopus Deploy site, but you can use this to point to a specific installer at a URL.
@@ -24,6 +24,7 @@ This cookbook is still very beta and was built to get around the scripting Octop
 :proxy_port, Integer, default: 80
 :proxy_username, [String, nil], default: nil
 :use_default_proxy, [true, false], default: false
+```
 
 ```ruby
 # Installs the tentacle only
