@@ -18,10 +18,10 @@ gem 'ffi'
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
 # uploaded to a Supermarket.
 #
-# issues_url 'https://github.com/<insert_org_here>/od-tentacle/issues'
+issues_url 'https://github.com/jdruin/od-tentacle/issues'
 
 # The `source_url` points to the development repository for this cookbook.  A
 # `View Source` link will be displayed on this cookbook's page when uploaded to
 # a Supermarket.
 #
-# source_url 'https://github.com/<insert_org_here>/od-tentacle'
+source_url 'https://github.com/jdruin/octopus-deploy-tentacle'
