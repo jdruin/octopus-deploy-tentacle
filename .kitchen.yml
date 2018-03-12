@@ -13,9 +13,9 @@ verifier:
   name: inspec
 
 platforms:
-  - name: win2012r2-chef
+  - name: win2012r2-stanard
     driver:
-      box: win2012r2-chef
+      box: win2012r2-standard
       provider: hyperv
       memory: 2048
       cpus: 2
@@ -30,4 +30,4 @@ suites:
     verifier:
       inspec_tests:
         - test/smoke/default
-    attributes:
+    attributes: { roles: ['web','erma']}
